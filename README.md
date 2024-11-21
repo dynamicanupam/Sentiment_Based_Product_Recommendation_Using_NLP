@@ -36,3 +36,7 @@ The dataset that you are going to use is inspired by this Kaggle competition. We
 - **Code**: The code for Sentiment Classification and Recommender Systems is available in the Main.ipynb Jupyter notebook.
 
 - **Product Filtering**: The top 20 products are filtered using the recommender system. For each of these products, the user_sentiment is predicted for all the reviews. The Top 5 products with the highest Positive User Sentiment are then filtered out.
+
+    
+  ## Demo of the application
+[Demo-App.mp4](https://raw.githubusercontent.com/dynamicanupam/Sentiment_Based_Product_Recommendation_Using_NLP/main/Demo-App.mp4)
