@@ -1,42 +1,39 @@
 # Sentiment Based Product Recommendation System
 ---
 ## Problem Statement
-The e-commerce business is quite popular today. Here, you do not need to take orders by going to each customer. A company launches its website to sell the items to the end consumer, and customers can order the products that they require from the same website. Famous examples of such e-commerce companies are Amazon, Flipkart, Myntra, Paytm and Snapdeal.
 
-Suppose you are working as a Machine Learning Engineer in an e-commerce company named 'Ebuss'. Ebuss has captured a huge market share in many fields, and it sells the products in various categories such as household essentials, books, personal care products, medicines, cosmetic items, beauty products, electrical appliances, kitchen and dining products and health care products.
+E-commerce businesses have transformed the way consumers shop, offering convenience and a wide range of choices. Companies like Amazon, Flipkart, and Myntra have set industry standards by providing personalized shopping experiences.  
 
-With the advancement in technology, it is imperative for Ebuss to grow quickly in the e-commerce market to become a major leader in the market because it has to compete with the likes of Amazon, Flipkart, etc., which are already market leaders.
+Ebuss, a growing e-commerce company, operates across multiple product categories, including household essentials, books, personal care products, medicines, cosmetics, electrical appliances, kitchenware, and health products. To compete with established market leaders, Ebuss aims to enhance its product recommendation system by leveraging user feedback such as reviews and ratings.  
 
-As a senior ML Engineer, you are asked to build a model that will improve the recommendations given to the users given their past reviews and ratings. 
+The goal is to develop a sentiment-based product recommendation system to improve user experience and drive customer satisfaction. This involves the following key tasks:  
 
-In order to do this, you planned to build a sentiment-based product recommendation system, which includes the following tasks.
-1-Data sourcing and sentiment analysis
-2-Building a recommendation system
-3-Improving the recommendations using the sentiment analysis model
-4-Deploying the end-to-end project with a user interface
- 
+1. **Data Sourcing and Sentiment Analysis**: Collecting and analyzing user reviews to extract meaningful sentiment insights.  
+2. **Building a Recommendation System**: Creating a recommendation engine based on user preferences and interactions.  
+3. **Improving Recommendations**: Integrating sentiment analysis results to refine and personalize product suggestions.  
+4. **End-to-End Deployment**: Implementing the solution with a user-friendly interface for seamless customer interaction.  
+
+This initiative will empower Ebuss to deliver a superior and personalized shopping experience, positioning it as a strong competitor in the e-commerce industry.
+
 ## Data sourcing and sentiment analysis
-In this task, you have to analyse product reviews after some text preprocessing steps and build an ML model to get the sentiments corresponding to the users' reviews and ratings for multiple products. 
+To analyze product reviews by applying text preprocessing steps and building an ML model to determine the sentiments associated with users' reviews and ratings for various products.
 
-The dataset that you are going to use is inspired by this Kaggle competition. We have made a subset of the original dataset, which has been provided below.
-
+The dataset for this task is a subset derived from a Kaggle competition dataset, tailored specifically for this purpose and provided below.
 
 ## Solution Approach
+- **Data Preparation**: The dataset and its attribute descriptions are located in the dataset folder. Data cleaning, visualization, and preprocessing are performed using NLP techniques.  
 
-- **Data Preparation**: The dataset and attribute descriptions are available under the dataset folder. The data is cleaned, visualized, and preprocessed using Natural Language Processing (NLP).
+- **Text Vectorization**: The textual data (combination of `review_title` and `review_text`) is vectorized using the TF-IDF Vectorizer, which quantifies the importance of words relative to the entire dataset. 
 
-- **Text Vectorization**: The TF-IDF Vectorizer is used to vectorize the textual data (review_title+review_text). This measures the relative importance of a word with respect to other documents.
+- **Addressing Class Imbalance**: To tackle class imbalance in the dataset, the Synthetic Minority Over-sampling Technique (SMOTE) is applied for oversampling before model training.  
 
-- **Handling Class Imbalance**: The dataset suffers from a class imbalance issue. The Synthetic Minority Over-sampling Technique (SMOTE) is used for oversampling before applying the model.
+- **Machine Learning Models**: Multiple classification models are trained on the vectorized data to predict the sentiment (`user_sentiment`) as positive (1) or negative (0). These models include Logistic Regression, and tree-based algorithms like Random Forest, XGBoost and LightGBM. The best-performing model is selected based on evaluation metrics such as Accuracy, Precision, Recall, F1 Score, and AUC. XGBoost emerges as the best model.  
 
-- **Machine Learning Models**: Various Machine Learning Classification Models are applied on the vectorized data and the target column (user_sentiment). These models include Logistic Regression, Naive Bayes, and Tree Algorithms (Decision Tree, Random Forest, XGBoost). The objective of these ML models is to classify the sentiment as positive(1) or negative(0). The best model is selected based on various ML classification metrics (Accuracy, Precision, Recall, F1 Score, AUC). XGBoost is selected as the best model based on these evaluation metrics.
+- **Recommender System**: A collaborative filtering-based recommender system is implemented using both user-user and item-item approaches. The system is evaluated using the Root Mean Square Error (RMSE) metric.  
 
-- **Recommender System**: A Collaborative Filtering Recommender system is created based on User-user and Item-item approaches. The Root Mean Square Error (RMSE) evaluation metric is used for evaluation.
+- **Codebase**: The entire implementation for sentiment classification and the recommender system is consolidated in the `Main.ipynb` Jupyter notebook.  
 
-- **Code**: The code for Sentiment Classification and Recommender Systems is available in the Main.ipynb Jupyter notebook.
-
-- **Product Filtering**: The top 20 products are filtered using the recommender system. For each of these products, the user_sentiment is predicted for all the reviews. The Top 5 products with the highest Positive User Sentiment are then filtered out.
-
+- **Product Filtering**: The recommender system identifies the top 20 products. For these products, the `user_sentiment` is predicted for all reviews, and the 5 products with the highest positive sentiment are highlighted.  
 
 ## Demo of the application
 [![Watch the video](https://raw.githubusercontent.com/dynamicanupam/Sentiment_Based_Product_Recommendation_Using_NLP/main/Recommendation_App_UI.png)](https://raw.githubusercontent.com/dynamicanupam/Sentiment_Based_Product_Recommendation_Using_NLP/main/Demo-App.mp4)
