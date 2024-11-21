@@ -1,4 +1,4 @@
-# Sentiment Based Product Recommendation System
+# Sentiment Based Recommendation System
 ---
 ## Problem Statement
 
