@@ -36,5 +36,7 @@ The dataset for this task is a subset derived from a Kaggle competition dataset,
 - **Product Filtering**: The recommender system identifies the top 20 products. For these products, the `user_sentiment` is predicted for all reviews, and the 5 products with the highest positive sentiment are highlighted.  
 
 ## Demo of the application
-[![Watch the video](https://raw.githubusercontent.com/dynamicanupam/Sentiment_Based_Product_Recommendation_Using_NLP/main/Recommendation_App_UI.png)](https://raw.githubusercontent.com/dynamicanupam/Sentiment_Based_Product_Recommendation_Using_NLP/main/Demo-App.mp4)
+
+https://github.com/user-attachments/assets/e92fbd46-083d-45d7-b80e-5e5fb8e17a30
+
 
